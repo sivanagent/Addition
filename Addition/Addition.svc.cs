@@ -8,9 +8,9 @@ using System.Text;
 
 namespace Addition
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class Service1 : IService1
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Addition" in code, svc and config file together.
+    // NOTE: In order to launch WCF Test Client for testing this service, please select Addition.svc or Addition.svc.cs at the Solution Explorer and start debugging.
+    public class Addition : IAddition
     {
         public string GetData(int value)
         {
@@ -29,5 +29,17 @@ namespace Addition
             }
             return composite;
         }
+
+
+        public List<MathData> AddUD(ref List<MathData> md)
+        {
+            for (int i = 0; i < md.Count; i++)
+            {
+                md[i].FRsltArg = md[i].FArg1 + md[i].FArg2;
+            }
+            return md;
+        }
+
+
     }
 }

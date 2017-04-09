@@ -8,9 +8,9 @@ using System.Text;
 
 namespace Addition
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IAddition" in both code and config file together.
     [ServiceContract]
-    public interface IService1
+    public interface IAddition
     {
 
         [OperationContract]
@@ -20,6 +20,9 @@ namespace Addition
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
+        [OperationContract]
+        List<MathData> AddUD(ref List<MathData> md);
+
     }
 
 
@@ -43,5 +46,23 @@ namespace Addition
             get { return stringValue; }
             set { stringValue = value; }
         }
+    }
+
+    [DataContract]
+    public class MathData
+    {
+        [DataMember]
+        public float FArg1 { get ; set;  }
+        [DataMember]
+        public float FArg2 { get; set; }
+        [DataMember]
+        public float FRsltArg { get; set; }
+
+        [DataMember]
+        public string StrArg1 { get; set; }
+        [DataMember]
+        public string StrArg2 { get; set; }
+        [DataMember]
+        public string StrConcatRslt { get; set; }
     }
 }
