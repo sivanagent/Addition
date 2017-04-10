@@ -17,6 +17,17 @@ namespace Addition
             return string.Format("You entered: {0}", value);
         }
 
+        public string GetDataUsingDataContract1(string composite)
+        {
+            if (composite == null)
+            {
+                throw new ArgumentNullException("composite");
+            }
+            composite = composite + composite;
+            return composite;
+        }
+
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
@@ -40,6 +51,14 @@ namespace Addition
             return md;
         }
 
+        public MathData[] AddArray(MathData[] md)
+        {
+            for (int i = 0; i < md.Length; i++)
+            {
+                md[i].FRsltArg = md[i].FArg1 + md[i].FArg2;
+            }
+            return md;
+        }
 
     }
 }
