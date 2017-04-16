@@ -13,22 +13,10 @@ namespace Addition
     public interface IAddition
     {
         [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         [OperationContract]
-        string GetDataUsingDataContract1(string composite);
-
-        // TODO: Add your service operations here
-        [OperationContract]
-        List<MathData> AddUD(ref List<MathData> md);
-
-        [OperationContract]
         MathData[] AddArray(MathData[] md);
-
-
     }
 
 
@@ -58,11 +46,11 @@ namespace Addition
     public class MathData
     {
         [DataMember]
-        public Int32 FArg1 { get ; set;  }
+        public int FArg1 { get ; set;  }
         [DataMember]
-        public Int32 FArg2 { get; set; }
+        public int FArg2 { get; set; }
         [DataMember]
-        public Int32 FRsltArg { get; set; }
+        public int FRsltArg { get; set; }
 
         [DataMember]
         public string StrArg1 { get; set; }
